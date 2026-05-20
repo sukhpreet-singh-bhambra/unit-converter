@@ -1,0 +1,116 @@
+<!-- Sukhpreet Singh Bhambra | Student No. 9019231 | 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact the Unit Converter project owner with questions or feedback.">
+    <title>Contact Us | Unit Converter</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="site-header">
+            <a class="site-logo" href="index.html" aria-label="Unit Converter home">Unit Converter</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contactUs.html" aria-current="page">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact-page">
+            <section class="contact-hero" aria-labelledby="contactHeading">
+                <p class="eyebrow">Questions and feedback</p>
+                <h1 id="contactHeading">Let's Connect</h1>
+                <p>Have a question about the converter, a suggestion for another unit category, or feedback on the project? Send a message below.</p>
+            </section>
+
+            <section class="contact-shell" aria-label="Contact form and details">
+                <aside class="contact-info">
+                    <img src="images/contact-hero.png" alt="Professional contact support workspace">
+                    <div class="contact-info-content">
+                        <p class="eyebrow">Project support</p>
+                        <h2>Unit Converter</h2>
+                        <p>Use this form for project questions, feature ideas, or general feedback.</p>
+
+                        <ul class="contact-methods">
+                            <li>
+                                <span>Email</span>
+                                <a href="mailto:unitconverter@gmail.com">unitconverter@gmail.com</a>
+                            </li>
+                            <li>
+                                <span>Phone</span>
+                                <a href="tel:9891628902">9891628902</a>
+                            </li>
+                            <li>
+                                <span>LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/sukhpreet-singh-bhambra/">View profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <form id="contactUsForm" class="contact-form" novalidate>
+                    <div class="form-header">
+                        <h2>Send a Message</h2>
+                        <p>Required fields are marked with an asterisk.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field-group">
+                            <label for="firstName">First name <span aria-hidden="true">*</span></label>
+                            <input id="firstName" type="text" name="firstName" autocomplete="given-name" placeholder="Sukhpreet" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="lastName">Last name</label>
+                            <input id="lastName" type="text" name="lastName" autocomplete="family-name" placeholder="Bhambra">
+                        </div>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="field-group">
+                            <label for="mobileNumber">Mobile number <span aria-hidden="true">*</span></label>
+                            <input id="mobileNumber" type="tel" name="mobileNumber" autocomplete="tel" placeholder="1234567890" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="mail">Email <span aria-hidden="true">*</span></label>
+                            <input id="mail" type="email" name="mail" autocomplete="email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                        <input id="subject" type="text" name="subject" placeholder="Feature request" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="query">Query <span aria-hidden="true">*</span></label>
+                        <textarea id="query" name="query" required rows="6" placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button" id="submitForm">Submit</button>
+                        <button type="reset" class="secondary-button" id="resetForm">Reset</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <small id="footerDynamicInfo"></small>
+        </footer>
+    </div>
+
+    <script src="js/contactUs.js"></script>
+</body>
+
+</html>

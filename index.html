@@ -1,0 +1,135 @@
+<!-- Sukhpreet Singh Bhambra | Student No. 9019231 | 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert area, length, temperature, time, volume, and weight units quickly.">
+    <title>Unit Converter</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header class="site-header">
+            <a class="site-logo" href="index.html" aria-label="Unit Converter home">Unit Converter</a>
+            <nav class="site-nav" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="app-hero" aria-labelledby="converterHeading">
+                <div class="hero-content">
+                    <p class="eyebrow">Fast everyday calculations</p>
+                    <h1 id="converterHeading">Professional Unit Converter</h1>
+                    <p>Convert, compare, copy, and save recent measurements with a clean JavaScript-powered workflow.</p>
+                    <a class="hero-button" href="#converterWorkspace">Start converting</a>
+                    <div class="hero-stats" aria-label="Project highlights">
+                        <span><strong>6</strong> categories</span>
+                        <span><strong>50+</strong> units</span>
+                        <span><strong>Live</strong> formulas</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="converter-page" id="converterWorkspace" aria-label="Converter workspace">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Interactive workspace</p>
+                        <h2>Convert With Precision</h2>
+                    </div>
+                    <p class="section-note">A compact utility interface with state management, browser storage, and polished client-side interactions.</p>
+                </div>
+            </section>
+
+            <section class="converter-card" aria-label="Unit converter">
+                <div class="category-tabs" role="group" aria-label="Unit category">
+                    <button id="areaButton" class="category-button active" type="button" value="area">Area</button>
+                    <button id="lengthButton" class="category-button" type="button" value="length">Length</button>
+                    <button id="temperatureButton" class="category-button" type="button" value="temperature">Temperature</button>
+                    <button id="timeButton" class="category-button" type="button" value="time">Time</button>
+                    <button id="volumeButton" class="category-button" type="button" value="volume">Volume</button>
+                    <button id="weightButton" class="category-button" type="button" value="weight">Weight</button>
+                </div>
+
+                <div class="tool-panel" aria-label="Conversion tools">
+                    <div class="field-group">
+                        <label for="precisionRange">Decimal precision</label>
+                        <div class="range-row">
+                            <input type="range" id="precisionRange" min="0" max="10" value="4">
+                            <output id="precisionOutput" for="precisionRange">4</output>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="formatMode">Number format</label>
+                        <select id="formatMode">
+                            <option value="standard">Standard</option>
+                            <option value="scientific">Scientific</option>
+                        </select>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button id="swapUnits" class="secondary-button" type="button">Swap units</button>
+                        <button id="copyResult" class="secondary-button" type="button">Copy result</button>
+                    </div>
+                </div>
+
+                <div class="converter-grid">
+                    <div class="field-group">
+                        <label for="fromValue">From value</label>
+                        <input type="number" id="fromValue" inputmode="decimal" placeholder="Enter a number">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="toValue">Converted value</label>
+                        <input type="text" id="toValue" readonly placeholder="Result appears here">
+                    </div>
+
+                    <div class="field-group">
+                        <label for="fromUnit">From unit</label>
+                        <input type="search" id="fromUnitSearch" placeholder="Filter from units">
+                        <select id="fromUnit" size="10"></select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="toUnit">To unit</label>
+                        <input type="search" id="toUnitSearch" placeholder="Filter to units">
+                        <select id="toUnit" size="10"></select>
+                    </div>
+                </div>
+
+                <p class="result" id="resultSection" aria-live="polite"></p>
+
+                <div class="insight-grid">
+                    <section class="mini-panel" aria-labelledby="formulaHeading">
+                        <h2 id="formulaHeading">Formula</h2>
+                        <p id="formulaText">Select units to view the conversion formula.</p>
+                    </section>
+
+                    <section class="mini-panel" aria-labelledby="historyHeading">
+                        <div class="panel-heading">
+                            <h2 id="historyHeading">Recent Conversions</h2>
+                            <button id="clearHistory" class="text-button" type="button">Clear</button>
+                        </div>
+                        <ol id="historyList" class="history-list"></ol>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <small id="footerDynamicInfo"></small>
+        </footer>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
