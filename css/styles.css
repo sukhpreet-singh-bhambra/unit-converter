@@ -679,7 +679,7 @@ input[readonly] {
 }
 
 .about-profile-card {
-    overflow: hidden;
+    padding: 18px;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: #0f172a;
@@ -689,8 +689,10 @@ input[readonly] {
 .about-profile-card img {
     display: block;
     width: 100%;
-    height: 360px;
+    height: 518px;
+    border-radius: var(--radius);
     object-fit: cover;
+    object-position: center;
 }
 
 .about-profile-content {
@@ -714,6 +716,11 @@ input[readonly] {
     color: rgba(255, 255, 255, 0.78);
 }
 
+.about-profile-content .profile-location {
+    color: #bae6fd;
+    font-weight: 800;
+}
+
 .profile-stats {
     display: grid;
     gap: 12px;
@@ -734,6 +741,26 @@ input[readonly] {
     font-size: 1.35rem;
 }
 
+.linkedin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    min-height: 44px;
+    margin: 24px auto 0;
+    padding: 0 18px;
+    border-radius: var(--radius);
+    color: #ffffff;
+    background: var(--primary);
+    font-weight: 800;
+}
+
+.linkedin-button:hover {
+    color: #ffffff;
+    background: var(--primary-dark);
+    text-decoration: none;
+}
+
 .about-details {
     display: grid;
     gap: 18px;
@@ -748,6 +775,33 @@ input[readonly] {
     gap: 8px;
     margin: 10px 0 0;
     padding-left: 20px;
+}
+
+.linkedin-summary-grid {
+    display: grid;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.linkedin-summary-grid article {
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #f8fafc;
+}
+
+.linkedin-summary-grid h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.linkedin-summary-grid p {
+    margin: 8px 0 0;
+}
+
+.credentials-list {
+    margin-top: 8px;
 }
 
 .contact-hero {
@@ -986,7 +1040,7 @@ input[readonly] {
     }
 
     .about-profile-card img {
-        height: 300px;
+        height: 432px;
     }
 }
 
@@ -1058,6 +1112,6 @@ input[readonly] {
     }
 
     .about-profile-card img {
-        height: 240px;
+        height: 346px;
     }
 }
