@@ -4,7 +4,7 @@
 const $ = selector => document.querySelector(selector);
 
 function populateFooter() {
-    $("#footerDynamicInfo").textContent = `\u00a9 Sukhpreet Singh Bhambra | Student No. 9019231 | ${new Date().getFullYear()}`;
+    $("#footerYear").textContent = new Date().getFullYear();
 }
 
 function validateEmail(email) {
@@ -74,8 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        showMessage("Query submitted successfully.", "success");
         form.reset();
+        showMessage("Query submitted successfully.", "success");
     });
 
     form.addEventListener("reset", () => {

@@ -98,7 +98,7 @@ function formatNumber(value) {
 }
 
 function populateFooter() {
-    $("#footerDynamicInfo").textContent = `\u00a9 Sukhpreet Singh Bhambra | Student No. 9019231 | ${new Date().getFullYear()}`;
+    $("#footerYear").textContent = new Date().getFullYear();
 }
 
 function getUnits(category = selectedCategory) {

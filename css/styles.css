@@ -74,19 +74,20 @@ textarea:focus-visible {
     justify-content: space-between;
     gap: 24px;
     padding: 18px clamp(18px, 4vw, 64px);
-    background: rgba(255, 255, 255, 0.94);
-    border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(14px);
+    background:
+        linear-gradient(135deg, #0f172a 0%, #102f46 52%, #0f766e 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .site-logo {
-    color: var(--text);
+    color: #ffffff;
     font-size: clamp(1.2rem, 3vw, 1.7rem);
     font-weight: 800;
     letter-spacing: 0;
 }
 
 .site-logo:hover {
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -106,37 +107,41 @@ textarea:focus-visible {
     min-height: 40px;
     padding: 8px 13px;
     border-radius: var(--radius);
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.86);
     font-weight: 700;
 }
 
 .site-nav a:hover,
 .site-nav a[aria-current="page"] {
-    color: var(--primary);
-    background: var(--surface-strong);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
     text-decoration: none;
+}
+
+.home-page {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 64px) 0;
 }
 
 .app-hero {
     position: relative;
-    min-height: clamp(420px, 62vh, 620px);
-    display: flex;
-    align-items: center;
-    padding: clamp(36px, 7vw, 80px) clamp(18px, 5vw, 72px);
+    min-height: clamp(420px, 46vh, 520px);
+    display: grid;
+    align-items: end;
+    margin-bottom: 28px;
+    padding: clamp(24px, 5vw, 44px);
     overflow: hidden;
+    border-radius: var(--radius);
     color: #ffffff;
     background:
         linear-gradient(90deg, rgba(9, 20, 38, 0.92) 0%, rgba(9, 20, 38, 0.72) 46%, rgba(9, 20, 38, 0.22) 100%),
         url("../images/converter-hero.png") center / cover no-repeat;
+    box-shadow: var(--shadow);
 }
 
 .app-hero::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    height: 130px;
-    background: linear-gradient(180deg, transparent, var(--bg));
-    pointer-events: none;
+    display: none;
 }
 
 .hero-content {
@@ -180,6 +185,7 @@ textarea:focus-visible {
     color: #ffffff;
     text-decoration: none;
     transform: translateY(-1px);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
 }
 
 .hero-stats {
@@ -216,6 +222,15 @@ textarea:focus-visible {
 
 .converter-page {
     padding-bottom: 18px;
+}
+
+.home-page .converter-page {
+    width: 100%;
+    padding-top: 0;
+}
+
+.home-page .converter-card {
+    width: 100%;
 }
 
 .page-intro {
@@ -353,16 +368,18 @@ output {
     background: #f8fafc;
 }
 
+.hero-button,
 .category-button,
 .primary-button,
 .secondary-button,
-.text-button {
+.text-button,
+.linkedin-button {
     min-height: 44px;
     border: 1px solid transparent;
     border-radius: var(--radius);
     cursor: pointer;
     font-weight: 800;
-    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
 }
 
 .category-button {
@@ -577,6 +594,8 @@ input[readonly] {
     text-align: left;
     font-size: 1.12rem;
     font-weight: 800;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
 }
 
 .accordion-header::after {
@@ -591,6 +610,10 @@ input[readonly] {
 
 .accordion-header[aria-expanded="true"] {
     background: var(--surface-strong);
+}
+
+.accordion-header:hover {
+    background: #f8fafc;
 }
 
 .accordion-header[aria-expanded="true"]::after {
@@ -751,14 +774,17 @@ input[readonly] {
     padding: 0 18px;
     border-radius: var(--radius);
     color: #ffffff;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     font-weight: 800;
+    box-shadow: 0 12px 22px rgba(29, 78, 216, 0.22);
 }
 
 .linkedin-button:hover {
     color: #ffffff;
-    background: var(--primary-dark);
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent));
     text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(29, 78, 216, 0.26);
 }
 
 .about-details {
@@ -805,19 +831,36 @@ input[readonly] {
 }
 
 .contact-hero {
-    max-width: 780px;
+    min-height: 320px;
+    display: grid;
+    align-items: end;
     margin-bottom: 28px;
+    padding: clamp(24px, 5vw, 44px);
+    overflow: hidden;
+    border-radius: var(--radius);
+    color: #ffffff;
+    background:
+        linear-gradient(90deg, rgba(9, 20, 38, 0.92), rgba(9, 20, 38, 0.68), rgba(9, 20, 38, 0.22)),
+        url("../images/contact-hero-professional.png") center / cover no-repeat;
+    box-shadow: var(--shadow);
 }
 
 .contact-hero h1 {
+    max-width: 760px;
+    color: #ffffff;
     font-size: clamp(2.45rem, 6vw, 4.6rem);
+    text-wrap: balance;
+}
+
+.contact-hero .eyebrow {
+    color: #7dd3fc;
 }
 
 .contact-hero p:last-child {
     max-width: 680px;
-    margin: 14px 0 0;
-    color: var(--muted);
-    font-size: 1.08rem;
+    margin: 16px 0 0;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1.1rem;
 }
 
 .contact-shell {
@@ -835,7 +878,7 @@ input[readonly] {
     position: relative;
     min-height: 680px;
     display: grid;
-    align-content: end;
+    align-content: center;
     overflow: hidden;
     color: #ffffff;
     background: #0f172a;
@@ -970,21 +1013,29 @@ input[readonly] {
 
 .primary-button {
     color: #ffffff;
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    box-shadow: 0 12px 22px rgba(29, 78, 216, 0.22);
 }
 
 .primary-button:hover {
-    background: var(--primary-dark);
+    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(29, 78, 216, 0.26);
 }
 
 .secondary-button {
-    color: var(--text);
+    color: var(--primary-dark);
     background: #ffffff;
-    border-color: var(--border);
+    border-color: #c3d0e3;
+    box-shadow: 0 8px 18px rgba(23, 32, 51, 0.08);
 }
 
 .secondary-button:hover {
-    background: #f1f5f9;
+    color: var(--primary-dark);
+    background: var(--surface-strong);
+    border-color: #adc0db;
+    transform: translateY(-1px);
 }
 
 .text-button {
@@ -997,12 +1048,90 @@ input[readonly] {
 
 .text-button:hover {
     background: #dbeafe;
+    transform: translateY(-1px);
 }
 
 .site-footer {
-    padding: 20px;
-    color: var(--muted);
+    margin-top: 36px;
+    color: rgba(255, 255, 255, 0.82);
+    background:
+        linear-gradient(135deg, #0f172a 0%, #102f46 52%, #0f766e 100%);
+}
+
+.footer-content {
+    width: min(1180px, calc(100% - 32px));
+    display: grid;
+    grid-template-columns: minmax(280px, 1.35fr) minmax(180px, 0.8fr) minmax(240px, 1fr);
+    gap: 28px;
+    margin: 0 auto;
+    padding: clamp(30px, 5vw, 46px) 0;
+}
+
+.footer-logo {
+    display: inline-flex;
+    color: #ffffff;
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+.footer-logo:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-brand p {
+    max-width: 420px;
+    margin: 12px 0 0;
+}
+
+.footer-nav h2,
+.footer-contact h2 {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.footer-nav ul,
+.footer-contact ul {
+    display: grid;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-nav a,
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 700;
+}
+
+.footer-nav a:hover,
+.footer-nav a[aria-current="page"],
+.footer-contact a:hover {
+    color: #ffffff;
+}
+
+.footer-contact {
+    font-style: normal;
+}
+
+.footer-bottom {
+    width: min(1180px, calc(100% - 32px));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+    padding: 16px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
     text-align: center;
+}
+
+.footer-bottom small {
+    max-width: 900px;
 }
 
 @media (max-width: 900px) {
@@ -1027,6 +1156,7 @@ input[readonly] {
     }
 
     .tool-panel,
+    .footer-content,
     .insight-grid {
         grid-template-columns: 1fr;
     }
@@ -1046,9 +1176,9 @@ input[readonly] {
 
 @media (max-width: 640px) {
     .app-hero {
-        min-height: 520px;
-        align-items: flex-end;
-        padding-bottom: 72px;
+        min-height: 500px;
+        align-items: end;
+        padding-bottom: 36px;
         background:
             linear-gradient(180deg, rgba(9, 20, 38, 0.38) 0%, rgba(9, 20, 38, 0.92) 62%, rgba(9, 20, 38, 0.98) 100%),
             url("../images/converter-hero.png") center / cover no-repeat;
@@ -1067,6 +1197,7 @@ input[readonly] {
     .category-tabs,
     .converter-grid,
     .tool-panel,
+    .footer-content,
     .insight-grid,
     .contact-layout,
     .contact-shell,
@@ -1091,6 +1222,7 @@ input[readonly] {
     .converter-page,
     .content-page,
     .contact-page,
+    .home-page,
     .about-page {
         width: min(100% - 24px, 1120px);
     }
@@ -1101,6 +1233,11 @@ input[readonly] {
 
     .contact-shell .contact-form {
         padding: 20px;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
     }
 
     .about-hero {
